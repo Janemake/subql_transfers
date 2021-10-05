@@ -3,5 +3,5 @@ type Transfer @entity {
   transferTo: String!
   transferFrom: String!
   transferAmount: BigInt
-  timestamp: Date!
+  timestamp: Date
 }

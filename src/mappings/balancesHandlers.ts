@@ -7,6 +7,8 @@ import {Balance} from "@polkadot/types/interfaces";
 export async function handleTransfer(event: SubstrateEvent): Promise<void> {
 
     const {event: {data: [from,to, amount]}} = event;
+
+    logger.info('/n TRANSFER IDENTIFIED: From ' + from + ' to ' +  to + ' with an Amount :' + amount + '/n' );
     const addressFrom = from.toString();
     const addressTo = to.toString();
     const amountBalance = (amount as Balance).toBigInt();
@@ -19,5 +21,7 @@ export async function handleTransfer(event: SubstrateEvent): Promise<void> {
     element.transferAmount = amountBalance;
 
     await element.save();
-    logger.info('Transfer from' + from);
+
+    logger.info('/n TRANSFER SAVED:' + from + ' and ' +  to + ' and Amount : ' + amount + '/n' );
+
 }

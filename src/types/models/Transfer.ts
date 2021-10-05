@@ -18,7 +18,7 @@ export class Transfer implements Entity {
 
     public transferAmount?: bigint;
 
-    public timestamp: Date;
+    public timestamp?: Date;
 
 
     async save(): Promise<void>{
