@@ -1,0 +1,7 @@
+type Transfer @entity {
+  id: ID!
+  transferTo: String!
+  transferFrom: String!
+  transferAmount: BigInt
+  timestamp: Date!
+}
